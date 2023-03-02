@@ -3,13 +3,13 @@ const app = express();
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "/public/")))
 app.get("/", (req, res) => {
-    res.send("Hello World Ja");
+    res.send("Hello World Jaaaaaaaa");
 })
 
-app.listen(port, () => {
-    debug("Listening on port %d", port);
+app.listen(PORT, () => {
+    debug("Listening on port %d", PORT);
 })

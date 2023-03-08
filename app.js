@@ -6,8 +6,13 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "/public/")))
+
+app.set("views", "./src/views");
+app.set("view engins", "ejs");
+
+
 app.get("/", (req, res) => {
-    res.send("Hello World Jaaaaaaaa");
+    res.render('index', { username: 'New' });
 })
 
 app.listen(PORT, () => {

@@ -8,11 +8,11 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, "/public/")))
 
 app.set("views", "./src/views");
-app.set("view engins", "ejs");
+app.set("view engine", "ejs");
 
 
 app.get("/", (req, res) => {
-    res.render('index', { username: 'New' });
+    res.render('index', { username: 'New', customer: ["New", "Ja"] });
 })
 
 app.listen(PORT, () => {
